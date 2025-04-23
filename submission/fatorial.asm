@@ -11,7 +11,8 @@ MAIN        LD UM               ; AC = 1
             HM                  ; Halt
 
 ; Sub-rotina de fatorial iterativo
-FAT_SUB     LD N                ; Carrega N
+FAT_SUB     K=0
+            LD N                ; Carrega N
             JZ FIM_FAT          ; Se N == 0, fim
             ML RES              ; AC = AC * RES
             MM RES              ; RES ← AC
