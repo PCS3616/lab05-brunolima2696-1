@@ -1,9 +1,3 @@
-; Símbolos exportados
-> MAIN
-> FAT_SUB
-> N
-> RES
-
 ; Programa principal
 MAIN        LD UM               ; AC = 1
             MM RES              ; RES = 1
