@@ -1,26 +1,31 @@
-; Programa principal
-MAIN        LV /0001            ; AC = 1
-            MM N                ; Salva em N (0x100)
-            MM RES              ; Inicia resultado com 1 (em 0x102)
-            SC FAT_SUB          ; Chama sub-rotina fatorial
-            HM                  ; Encerra
+; Símbolos exportados
+> MAIN
+> FAT_SUB
+> N
+> RES
 
-; Sub-rotina de fatorial
+; Programa principal
+MAIN        LD UM                ; AC ← 1
+            MM RES              ; RES = 1
+            SC FAT_SUB          ; Chama sub-rotina fatorial
+            HM                  ; Halt
+
+; Sub-rotina de fatorial iterativo
 FAT_SUB     LD N                ; Carrega N
             JZ FIM_FAT          ; Se N == 0, fim
-            ML RES              ; AC = AC * RES
-            MM RES              ; Atualiza resultado
-            LD N                ; Carrega N
+            ML RES              ; AC ← AC * RES
+            MM RES              ; RES ← AC
+            LD N
             SB UM               ; N = N - 1
-            MM N                ; Atualiza N
-            JP FAT_SUB          ; Volta para reiniciar loop
-FIM_FAT     RS FAT_SUB          ; Retorna
+            MM N
+            JP FAT_SUB+2        ; Volta para repetir
+FIM_FAT     RS FAT_SUB
 
 ; Constantes e variáveis
-@ /0100
-N           K /0000             ; Argumento do fatorial
+@ /100
+N           K /0000             ; Endereço do argumento (inicializado externamente)
 
-@ /0102
-RES         K /0000             ; Resultado do fatorial
+@ /102
+RES         K /0000             ; Endereço do resultado
 
 UM          K /0001             ; Constante 1
