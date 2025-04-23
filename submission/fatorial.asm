@@ -17,10 +17,10 @@ FAT_SUB     LD N                ; Carrega N
 FIM_FAT     RS FAT_SUB          ; Retorna
 
 ; Constantes e variáveis
-@ /100
+@ /0100
 N           K /0000             ; Argumento do fatorial
 
-@ /102
+@ /0102
 RES         K /0000             ; Resultado do fatorial
 
 UM          K /0001             ; Constante 1
