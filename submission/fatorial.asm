@@ -13,7 +13,7 @@ FAT_SUB     LD N                ; Carrega N
             LD N                ; Carrega N
             SB UM               ; N = N - 1
             MM N                ; Atualiza N
-            JP FAT_SUB+2        ; Volta para reiniciar loop
+            JP FAT_SUB          ; Volta para reiniciar loop
 FIM_FAT     RS FAT_SUB          ; Retorna
 
 ; Constantes e variáveis
