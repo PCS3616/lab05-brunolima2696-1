@@ -18,7 +18,7 @@ FAT_SUB     LD N                ; Carrega N
             LD N
             SB UM               ; N = N - 1
             MM N
-            JP FAT_SUB+2        ; Volta para repetir
+            JP FAT_SUB          ; Volta para repetir
 FIM_FAT     RS FAT_SUB
 
 ; Constantes e variáveis
