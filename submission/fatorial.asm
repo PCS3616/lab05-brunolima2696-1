@@ -1,6 +1,6 @@
 ; Programa principal
-MAIN        SC FAT_SUB         ; Chama sub-rotina
-            HM /0000           ; Fim da execução
+SC FAT_SUB         ; Chama sub-rotina
+HM /0000           ; Fim da execução
 
 ; Sub-rotina iterativa de fatorial
 @ /200
