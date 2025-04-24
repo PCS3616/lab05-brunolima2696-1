@@ -5,7 +5,7 @@ MAIN        SC FAT_SUB         ; Chama sub-rotina
 ; Sub-rotina iterativa de fatorial
 @ /200
 FAT_SUB     K /0000
-            LD N               ; Carrega N
+LOOP        LD N               ; Carrega N
             JZ FIM_FAT         ; Se N == 0, termina
 
             ML RES             ; RES = RES * N
@@ -15,7 +15,7 @@ FAT_SUB     K /0000
             SB UM              ; N = N - 1
             MM N
 
-            JP FAT_SUB         ; Volta ao início da sub-rotina
+            JP LOOP            ; Volta ao início da sub-rotina
 FIM_FAT     RS FAT_SUB
 
 ; Variáveis e constantes
