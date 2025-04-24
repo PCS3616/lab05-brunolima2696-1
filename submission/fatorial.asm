@@ -1,18 +1,11 @@
-; Símbolos exportados
-> MAIN
-> FAT_SUB
-> N
-> RES
-
 ; Programa principal
-MAIN        LV /0001           ; AC ← 1
-            MM N               ; Salva 1 em N (valor do fatorial)
-            MM RES             ; RES ← 1 (acumulador para o fatorial)
-            SC FAT_SUB         ; Chama sub-rotina
-            HM                 ; Fim da execução
+MAIN        SC FAT_SUB         ; Chama sub-rotina
+            HM /0000           ; Fim da execução
 
 ; Sub-rotina iterativa de fatorial
-FAT_SUB     LD N               ; Carrega N
+@ /200
+FAT_SUB     K /0000
+            LD N               ; Carrega N
             JZ FIM_FAT         ; Se N == 0, termina
 
             ML RES             ; RES = RES * N
@@ -29,7 +22,6 @@ FIM_FAT     RS FAT_SUB
 @ /100
 N           K /0000            ; Argumento (n)
 
-@ /102
 RES         K /0000            ; Resultado (n!)
 
 UM          K /0001            ; Constante 1
