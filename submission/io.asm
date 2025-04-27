@@ -9,10 +9,10 @@ MAIN         GD /000
              AD X
              MM RES
              ML MIL
-             SB A000
+             SB CTEA2
              JN END
              LD RES
-             SB 000A
+             SB CTEA1
              AD CEM
              MM RES
              JP END
@@ -25,8 +25,8 @@ END          LD RES
 ASCII    K /3030
 MIL      K /1000
 CEM      K /0100
-000A     K /000A
-A000     K /A000
+CTEA1    K /000A
+CTEA2    K /A000
 
 X        K =0
 Y        K =0
