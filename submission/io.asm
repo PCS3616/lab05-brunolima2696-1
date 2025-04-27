@@ -1,4 +1,5 @@
-MAIN         GD /000
+MAIN         K /0000
+             GD /000
              SB ASCII            
              MM X
              GD /000
