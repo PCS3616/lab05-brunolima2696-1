@@ -1,5 +1,4 @@
-MAIN         K /0000
-             GD /000
+MAIN         GD /000
              SB ASCII            
              MM X
              GD /000
@@ -16,6 +15,7 @@ MAIN         K /0000
              SB 000A
              AD CEM
              MM RES
+             JP END
 END          LD RES
              AD ASCII            
              PD /100
