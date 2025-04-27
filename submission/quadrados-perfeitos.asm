@@ -1,29 +1,30 @@
-MAIN    SC QUADRADOS
-        HM /0000
+SC QUAD
+HM =0
 
 @ /300
-QUADRADOS   K/0000
-LOOP    LD VAR
-        SB CTE
-        JZ END
-        LD VAR
-        ML DOIS
-        AD UM
-        AD RES
-        MM RES
-POS     MM /102
-        LD POS
-        AD DOIS
-        MM POS
-        LD VAR
-        AD UM
-        MM VAR
-        JP LOOP
-END     RS QUADRADOS
+QUAD K =0
+LOOP LD VARI
+     SB CTE64
+     JZ END
+     LD VARI
+     ML CTE2
+     AD CTE1
+     AD RES
+     MM RES
+POS  MM /102
+     LD POS
+     AD CTE2
+     MM POS
+     LD VARI
+     AD CTE1
+     MM VARI
+     JP LOOP
+
+END RS QUAD
 
 @ /400
-UM      K =1
-DOIS    K =2
-RES     K =0
-VAR     K =0
-CTE     K =64
+CTE64 K =64
+VARI  K =0
+RES   K =0
+CTE2  K =2
+CTE1  K =1
