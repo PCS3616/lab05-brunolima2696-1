@@ -2,7 +2,7 @@ MAIN    SC QUADRADOS
         HM /0000
 
 @ /300
-QUADRADOS   K/0000
+QUADRADOS   K /0000
 LOOP    LD VAR
         SB CTE
         JZ END
